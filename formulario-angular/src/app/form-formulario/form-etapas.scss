@@ -1,0 +1,94 @@
+$pri: #d4a373;
+$sec: #e9edc9;
+$ter: #ccd5ae;
+$fontc: #262725;
+
+form {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.etapa {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $sec;
+  border-radius: 15px;
+  padding: 10px 0px;
+  align-items: center;
+  box-shadow: 5px 5px 10px #000000a8;
+}
+
+.etapa h3 {
+  width: 90%;
+  text-align: left;
+  margin: 5px 30px;
+  color: $fontc;
+  margin-bottom: 15px;
+}
+
+.erro {
+  text-align: left;
+  width: 100%;
+  margin-left: 50px;
+  color: red;
+  font-size: 13px;
+  display: none;
+}
+
+input {
+  background: #fd050500;
+  border: 1px solid #cfcfcf;
+  margin: 5px 0px;
+  height: 40px;
+  width: 97%;
+  font-size: 15px;
+  padding: 2px 13px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+input::after {
+  content: "teste";
+}
+
+small {
+    align-self: flex-start;
+    padding-left: 20px;
+}
+
+
+.skip {
+  background: $pri;
+  border: none;
+  margin: 5px 30px;
+  height: 40px;
+  width: 40%;
+  font-size: 15px;
+  padding: 2px 13px;
+  border-radius: 15px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 1px 1px 5px $ter;
+}
+
+.botoes-1step {
+  width: 100%;
+  text-align: right;
+}
+
+input::placeholder {
+  align-items: center;
+  padding: 2px 4px;
+  font-size: smaller;
+}
+
+input:active {
+  border: none;
+}
