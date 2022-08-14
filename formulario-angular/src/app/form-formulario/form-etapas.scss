@@ -1,7 +1,9 @@
-$pri: #d4a373;
-$sec: #e9edc9;
-$ter: #ccd5ae;
-$fontc: #262725;
+$pri:#d4a373;
+$sec:#faedcd;
+$ter:#e9edc9;
+$btn: #84a98c;
+$fontc:#262725;
+
 
 form {
   display: flex;
@@ -9,6 +11,12 @@ form {
   width: 80%;
   border-radius: 20px;
   text-align: center;
+}
+
+div#step1,
+div#step2,
+div#step3 {
+  background-color: $ter;
 }
 
 .etapa {
@@ -40,7 +48,7 @@ form {
 }
 
 input {
-  background: #fd050500;
+  background: $sec;
   border: 1px solid #cfcfcf;
   margin: 5px 0px;
   height: 40px;
@@ -55,14 +63,83 @@ input::after {
   content: "teste";
 }
 
-small {
-    align-self: flex-start;
-    padding-left: 20px;
+input::placeholder {
+  align-items: center;
+  padding: 2px 4px;
+  font-size: smaller;
 }
 
+input:active {
+  border: none;
+}
+
+small {
+  align-self: flex-start;
+  padding-left: 20px;
+}
+
+.container {
+  border: 1px solid #cfcfcf;
+  height: 40px;
+  width: 97%;
+  border-radius: 15px;
+  box-sizing: border-box;
+  margin: 5px 0px;
+}
+
+.select-container {
+  height: 100%;
+  border: none;
+  position: relative;
+  border-radius: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+.select-container select {
+  padding-left: 13px;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 15px;
+  color: rgb(102, 102, 102);
+}
+.select-container:after {
+  content: "keyboard_arrow_down";
+  font-family: "material icons";
+  font-size: 24px;
+  color: #666;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 
 .skip {
-  background: $pri;
+  background: $btn;
+  color: $ter;
+  font-weight: bold;
+  border: none;
+  margin: 5px 30px;
+  height: 40px;
+  width: 40%;
+  font-size: 15px;
+  padding: 2px 13px;
+  border-radius: 15px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.back {
+  background: #f4f4f4;
   border: none;
   margin: 5px 30px;
   height: 40px;
@@ -81,14 +158,4 @@ button:hover {
 .botoes-1step {
   width: 100%;
   text-align: right;
-}
-
-input::placeholder {
-  align-items: center;
-  padding: 2px 4px;
-  font-size: smaller;
-}
-
-input:active {
-  border: none;
 }

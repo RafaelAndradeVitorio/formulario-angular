@@ -10,6 +10,8 @@ import { FormHomeComponent } from './form-home/form-home.component';
 import { FormIlustracaoComponent } from './form-ilustracao/form-ilustracao.component';
 import { FormFormularioComponent } from './form-formulario/form-formulario.component';
 import { FormEtapa1Component } from './form-formulario/form-etapa1/form-etapa1.component';
+import { FormEtapa2Component } from './form-formulario/form-etapa2/form-etapa2.component';
+import { FormEtapa3Component } from './form-formulario/form-etapa3/form-etapa3.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { FormEtapa1Component } from './form-formulario/form-etapa1/form-etapa1.c
     FormIlustracaoComponent,
     FormFormularioComponent,
     FormEtapa1Component,
+    FormEtapa2Component,
+    FormEtapa3Component,
   ],
   imports: [
     BrowserModule,
