@@ -1,10 +1,7 @@
 <div class="card-forms">
 
-  <form action="">
-    <app-form-etapa1></app-form-etapa1>
-    <app-form-etapa2></app-form-etapa2>
-    <app-form-etapa3></app-form-etapa3>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <router-outlet></router-outlet>
   </form>
-
 
 </div>

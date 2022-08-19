@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-etapa1',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormEtapa1Component implements OnInit {
 
-  constructor() { }
+  nome: String =""
+  email: String=""
+  nomeIgreja: String = ""
+
+  send(){
+
+  }
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
 }
+
+
