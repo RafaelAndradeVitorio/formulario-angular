@@ -1,7 +1,188 @@
 <div class="card-forms">
 
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <router-outlet></router-outlet>
+  <form *ngIf="etapa === 1">
+
+    <div class="etapa" id="step1">
+      <h3>Dados Pessoais</h3>
+      <p class="erro">Preencha todos os campos</p>
+      <input type="text" id="Name" name="nome" class="etp1" placeholder="Nome completo" required ng-Model="nome">
+      <small>Ex: Nome Sobrenome </small>
+      <input type="email" id="Email" name="email" class="etp1" placeholder="Email do Contato" required ng-Model="email" email>
+      <small>Ex: exemplo@dominio.com</small>
+      <input type="text" id="CompanyName" name="nomeIgreja" class="etp1" placeholder="Nome da Igreja" required ng-Model="nomeIgreja">
+      <small>Ex: Igreja Batista InChurch</small>
+      <div class="botoes-1step">
+
+        <button type="button" (click)="avancar(2)" class="skip"> Próximo </button>
+      </div>
+    </div>
+
+  </form>
+
+  <form *ngIf="etapa === 2" >
+    <div class="etapa" id="step2">
+      <h3>Endereço</h3>
+      <p class="erro">Preencha todos os campos</p>
+      <!-- <input type="text" id="cep" name="zipcode" maxlength="8" class="etp2" data-mask="00000-000" placeholder="CEP"
+          required> -->
+      <input type="text" id="cep" name="zipcode" class="etp2" placeholder="CEP"
+          required>
+      <small>Ex: 00000-000</small>
+      <input type="text" id="localidade" name="city" class="etp2" placeholder="Cidade" required>
+      <small>Ex: Rio de Janeiro, Minas Gerais...</small>
+      <input type="text" id="uf" name="state" class="etp2" placeholder="Estado" required>
+      <small>Ex: Resende, Belo Horizonte...</small>
+      <input type="text" id="bairro" class="etp2" placeholder="Bairro" required>
+      <small>Ex: Jardim Alegria, Santa Lúcia</small>
+      <input type="text" id="logradouro" class="etp2" placeholder="Logradouro" required>
+      <small>Ex: Rua inChurch</small>
+      <input type="text" id="CompanyAddress2" class="etp2" placeholder="Número" required>
+      <small>Ex: 456</small>
+      <input type="text" id="complemento" class="etp2" placeholder="Complemento">
+      <small>Ex: bloco, apartamento...</small>
+      <div class="botoes">
+          <button (click)="avancar(1)" class="back"> Voltar </button>
+          <button (click)="avancar(3)" class="skip"> Proximo </button>
+      </div>
+    </div>
+  </form>
+
+  <form *ngIf="etapa === 3">
+    <div class="etapa" id="step3">
+      <h3>Dados financeiros</h3>
+      <p class="erro">Preencha todos os campos</p>
+      <input type="number" maxlength="18" minlength="14" id="CustomFieldsCompanyCNPJ" class="etp3" placeholder="CNPJ da Igreja" required>
+      <small>Ex: xx.xxx.xxx\xxxx-xx</small>
+      <input type="text" id="CustomFieldsCompanyRazaoSocial" class="etp3"
+          placeholder="Razão Social da Igreja" required>
+      <small>Ex: Igreja Batista InChurch</small>
+      <input type="text" id="CustomFieldsCompanyUsuárioGranito" class="etp3"
+          placeholder="Nome Responsável Financeiro" required>
+      <small>Ex: Nome Sobrenome</small>
+      <input type="email" id="CustomFieldsCompanyEmailResponsávelGranito" class="etp3"
+          placeholder="Email Responsável Financeiro" required>
+      <small>Ex: exemplo@dominio.com</small>
+      <input type="tel" id="CustomFieldsCompanyTelefoneResponsávelGranito" data-mask="(00) 00000-0000"
+          class="etp3" placeholder="Telefone Responsável Financeiro" required>
+      <small>Ex: (00)00000-0000</small>
+      <div class="container">
+          <div class="select-container">
+              <select name="" id="CustomFieldsCompanyPrimeiraSolucao">
+                  <option value="" class="placeSelect" disabled selected> Primeira solução que interessou o cliente </option>
+                  <option value="TOTEM">TOTEM</option>
+                  <option value="POS (Maquininha)">POS (Maquininha) </option>
+                  <option value="Painel de Controle inChurch">Painel de Controle inChurch </option>
+                  <option value="Guia de Currículos e Empresas">Guia de Currículos e Empresas
+                  </option>
+                  <option value="Notificações de Push">Notificações de Push </option>
+                  <option value="Pedidos de Oração">Pedidos de Oração </option>
+                  <option value="Gestão de Células e Pequenos Grupos">Gestão de Células e Pequenos
+                      Grupos </option>
+                  <option value="Gestão de Membresia">Gestão de Membresia </option>
+                  <option value="Gestão Financeira">Gestão Financeira </option>
+                  <option value="Doações">Doações </option>
+                  <option value="Eventos/Inscrições">Eventos/Inscrições </option>
+                  <option value="Agenda da Igreja">Agenda da Igreja </option>
+                  <option value="Multiplicador de Audiência (Parceria Multiplier App)">Multiplicador
+                      de Audiência (Parceria Multiplier App) </option>
+                  <option value="Transmissão Ao Vivo">Transmissão Ao Vivo </option>
+                  <option value="Downloads">Downloads </option>
+                  <option value="Palavras">Palavras </option>
+                  <option value="Bíblia">Bíblia </option>
+                  <option value="Páginas Multiuso">Páginas Multiuso </option>
+                  <option value="Notícias">Notícias </option>
+                  <option value="Níveis de Permissão">Níveis de Permissão </option>
+                  <option value="Grupos">Grupos </option>
+                  <option value="Multigestor">Multigestor </option>
+                  <option value="Qualidade de usabilidade inChurch">Qualidade de usabilidade inChurch
+                  </option>
+                  <option value="Qualidade de Design inChurch">Qualidade de Design inChurch </option>
+                  <option value="Sistema Integrado">Sistema Integrado </option>
+              </select>
+          </div>
+      </div>
+      <small> Ex: Eventos, Palavras, Membresia</small>
+      <div class="container">
+          <div class="select-container">
+              <select name="" id="CustomFieldsCompanySegundaSolucao">
+                  <option value="" class="placeSelect" disabled selected> Segunda solução que interessou o cliente </option>
+                  <option value="TOTEM">TOTEM</option>
+                  <option value="POS (Maquininha)">POS (Maquininha) </option>
+                  <option value="Painel de Controle inChurch">Painel de Controle inChurch </option>
+                  <option value="Guia de Currículos e Empresas">Guia de Currículos e Empresas
+                  </option>
+                  <option value="Notificações de Push">Notificações de Push </option>
+                  <option value="Pedidos de Oração">Pedidos de Oração </option>
+                  <option value="Gestão de Células e Pequenos Grupos">Gestão de Células e Pequenos
+                      Grupos </option>
+                  <option value="Gestão de Membresia">Gestão de Membresia </option>
+                  <option value="Gestão Financeira">Gestão Financeira </option>
+                  <option value="Doações">Doações </option>
+                  <option value="Eventos/Inscrições">Eventos/Inscrições </option>
+                  <option value="Agenda da Igreja">Agenda da Igreja </option>
+                  <option value="Multiplicador de Audiência (Parceria Multiplier App)">Multiplicador
+                      de Audiência (Parceria Multiplier App) </option>
+                  <option value="Transmissão Ao Vivo">Transmissão Ao Vivo </option>
+                  <option value="Downloads">Downloads </option>
+                  <option value="Palavras">Palavras </option>
+                  <option value="Bíblia">Bíblia </option>
+                  <option value="Páginas Multiuso">Páginas Multiuso </option>
+                  <option value="Notícias">Notícias </option>
+                  <option value="Níveis de Permissão">Níveis de Permissão </option>
+                  <option value="Grupos">Grupos </option>
+                  <option value="Multigestor">Multigestor </option>
+                  <option value="Qualidade de usabilidade inChurch">Qualidade de usabilidade inChurch
+                  </option>
+                  <option value="Qualidade de Design inChurch">Qualidade de Design inChurch </option>
+                  <option value="Sistema Integrado">Sistema Integrado </option>
+              </select>
+          </div>
+      </div>
+      <small> Ex: Eventos, Palavras, Membresia</small>
+      <div class="container">
+          <div class="select-container">
+              <select name="" id="CustomFieldsCompanyTerceiraSolucao">
+                  <option value="" class="placeSelect" disabled selected> Terceira solução que interessou o cliente </option>
+                  <option value="TOTEM">TOTEM</option>
+                  <option value="POS (Maquininha)">POS (Maquininha) </option>
+                  <option value="Painel de Controle inChurch">Painel de Controle inChurch </option>
+                  <option value="Guia de Currículos e Empresas">Guia de Currículos e Empresas
+                  </option>
+                  <option value="Notificações de Push">Notificações de Push </option>
+                  <option value="Pedidos de Oração">Pedidos de Oração </option>
+                  <option value="Gestão de Células e Pequenos Grupos">Gestão de Células e Pequenos
+                      Grupos </option>
+                  <option value="Gestão de Membresia">Gestão de Membresia </option>
+                  <option value="Gestão Financeira">Gestão Financeira </option>
+                  <option value="Doações">Doações </option>
+                  <option value="Eventos/Inscrições">Eventos/Inscrições </option>
+                  <option value="Agenda da Igreja">Agenda da Igreja </option>
+                  <option value="Multiplicador de Audiência (Parceria Multiplier App)">Multiplicador
+                      de Audiência (Parceria Multiplier App) </option>
+                  <option value="Transmissão Ao Vivo">Transmissão Ao Vivo </option>
+                  <option value="Downloads">Downloads </option>
+                  <option value="Palavras">Palavras </option>
+                  <option value="Bíblia">Bíblia </option>
+                  <option value="Páginas Multiuso">Páginas Multiuso </option>
+                  <option value="Notícias">Notícias </option>
+                  <option value="Níveis de Permissão">Níveis de Permissão </option>
+                  <option value="Grupos">Grupos </option>
+                  <option value="Multigestor">Multigestor </option>
+                  <option value="Qualidade de usabilidade inChurch">Qualidade de usabilidade inChurch
+                  </option>
+                  <option value="Qualidade de Design inChurch">Qualidade de Design inChurch </option>
+                  <option value="Sistema Integrado">Sistema Integrado </option>
+              </select>
+          </div>
+      </div>
+      <small> Ex: Eventos, Palavras, Membresia</small>
+
+      <div class="botoes">
+          <button (click)="avancar(2)" class="back"> Voltar </button>
+          <input type="submit" id="btn-enviar">
+      </div>
+
+    </div>
   </form>
 
 </div>
