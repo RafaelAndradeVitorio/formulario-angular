@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class FormEtapa1Component implements OnInit {
 
-  nome: String =""
+  nome: String ="testes"
   email: String=""
   nomeIgreja: String = ""
 
   send(){
-
+     console.log(this.nome, this.email, this.nomeIgreja)
   }
 
   constructor(private route: Router) { }
