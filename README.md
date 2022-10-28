@@ -1,2 +1,2 @@
 # formulario-angular
- SPA usando Angular com um formuláriodividido em etapas.
+ SPA usando Angular com um formulário dividido em etapas.
