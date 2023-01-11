@@ -15,9 +15,18 @@ export class FormFormularioComponent implements OnInit {
      console.log('subMETEU')
   }
 
+  classifica(){
+
+    for ( var i=0; i<120; i++){
+      let errosLiqui = ((120 - i) * 2);
+      console.log(`Acertou ${i}, fez ${ errosLiqui - 120} pontos liquidos`)
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    this.classifica()
   }
 
 }
